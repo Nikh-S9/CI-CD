@@ -5,7 +5,7 @@ pipeline {
     dockerImage = ""
   }
 
-  agent master
+  agent { label 'master' }
 
   stages {
 
