@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ip-app
-        image: nikhils9/ip-app:latest
+        image: nikhils9/myapp:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
