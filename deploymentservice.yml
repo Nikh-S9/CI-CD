@@ -23,11 +23,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-   name: my-nptom-svc
+   name: my-ipapp-svc
 spec:
     type: NodePort
     selector:
-        app: tomcat
+        app: ip-app
     ports:
        - name: http
          nodePort: 30099
