@@ -1,6 +1,12 @@
-FROM python
+FROM maven AS BUILD
 WORKDIR /app
-COPY ip_app.py /app
-COPY requirements.txt /app
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python","ip_app.py"]
+COPY . /app
+COPY ./libraries /root/.m2
+RUN cd ./target; ls
+RUN mvn clean package -Dmaven.test.skip=true
+
+FROM tomcat:8.0-alpine
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
+COPY --from=BUILD /app/target/calculator.war /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 8080
+CMD ["catalina.sh","run"]
