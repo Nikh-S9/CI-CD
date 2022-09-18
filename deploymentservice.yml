@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ip-app
-        image: nikhils9/ip-app:1.0
+        image: nikhils9/ip-app:latest
         ports:
         - containerPort: 80
 ---
