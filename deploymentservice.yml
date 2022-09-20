@@ -14,6 +14,11 @@ spec:
       labels:
         app: ip-app
     spec:
+      tolerations:
+      - key: env
+        value: test
+        effect: NoSchedule
+        operator: Equal
       containers:
       - name: ip-app
         image: nikhils9/ip-app
