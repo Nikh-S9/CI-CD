@@ -21,7 +21,7 @@ spec:
         operator: Equal
       containers:
       - name: ip-app
-        image: nikhils9/ip-app
+        image: nikhils9/myapp
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
