@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ip-app
-        image: nikhils9/myapp:latest
+        image: nikhils9/ip-app
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
@@ -31,6 +31,6 @@ spec:
         app: ip-app
     ports:
        - name: http
-         nodePort: 30099
-         port: 8086
+         nodePort: 30299
+         port: 8088
          targetPort: 80
